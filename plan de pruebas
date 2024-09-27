@@ -1,0 +1,90 @@
+/*
+*  # Caso de prueba: Registro de usuario exitoso
+*
+*   Título: Validar el registro de un usuario con datos correctos.
+*
+*   ID del caso: TC-001
+*
+*   Descripción: Este caso valida que el usuario pueda registrar correctamente
+*   un usuario utilizando datos válidos.
+*
+*   Datos:
+*   Usuario: ejemplo123
+*   Email: ejemplo@correo.com
+*   Contraseña: password123
+*
+*   Precondiciones:
+*      - tener la URL
+*      - tener el navegador abierto
+*      - cypress instalado y configurado
+*
+*   Prioridad: Alta
+*
+*   Pasos:
+*   - Abrir el navegador e ir a la URL del formulario
+*   - Llenar los campos de nombre de usuario, email y contraseña
+*   - Hacer clic en el botón "Registrarse"
+*   - Validar que el mensaje de "Usuario registrado con éxito" aparezca
+*   - Verificar que los datos se hayan almacenado en localStorage
+*
+*   Resultados esperados:
+*     - Los datos del usuario se almacenan en localStorage correctamente.
+*/
+
+
+
+/*
+*  # Caso de prueba: Registro con datos erróneos
+*
+*   Título: Validar error de registro al usar datos incorrectos.
+*
+*   ID del caso: TC-002
+*
+*   Descripción: Este caso valida que el formulario muestre un error
+*   cuando se intentan registrar datos vacíos o incorrectos.
+*
+*   Precondiciones:
+*      - tener la URL
+*      - tener el navegador abierto
+*      - cypress instalado y configurado
+*
+*   Prioridad: Media
+*
+*   Pasos:
+*   - Abrir el navegador e ir a la URL del formulario
+*   - Dejar los campos vacíos o poner datos inválidos
+*   - Hacer clic en el botón "Registrarse"
+*   - Validar que aparezca un mensaje de error
+*
+*   Resultados esperados:
+*     - Se muestra el mensaje de "Todos los campos son obligatorios".
+*/
+
+
+
+/*
+*  # Caso de prueba: Error por usuario no existente
+*
+*   Título: Validar que no se permita registrar un usuario no existente.
+*
+*   ID del caso: TC-003
+*
+*   Descripción: Este caso valida que el formulario arroje un error al intentar
+*   usar datos que no existen en la base de datos (o en este caso, en localStorage).
+*
+*   Precondiciones:
+*      - tener la URL
+*      - tener el navegador abierto
+*      - cypress instalado y configurado
+*
+*   Prioridad: Baja
+*
+*   Pasos:
+*   - Abrir el navegador e ir a la URL del formulario
+*   - Intentar registrar un usuario que no existe (simular no existencia)
+*   - Validar que aparezca un mensaje de error
+*
+*   Resultados esperados:
+*     - Se muestra un mensaje de error diciendo que el usuario no existe.
+*/
+

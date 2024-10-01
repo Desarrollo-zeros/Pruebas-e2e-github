@@ -1,6 +1,10 @@
 describe('Registro con datos erróneos', () => {
     it('Debe mostrar error si los campos están vacíos', () => {
-        cy.visit(''); // Cambia por tu URL
+        cy.visit('', {
+            headers: {
+                'Accept-Language': 'es-ES'
+            }
+        }); // Cambia por tu URL
         cy.get('button[type="submit"]').click();
 
         // Check that the input field for 'Nombre de usuario' has the required attribute

@@ -27,13 +27,22 @@ jobs:
         run: npx cypress run --reporter mochawesome --reporter-options reportDir=cypress/logs,overwrite=false,html=false,json=true  # Ejecuta Cypress con mochawesome
 
       # Este paso solo se ejecutará si el paso de "Run Cypress Tests" tuvo éxito
-      - name: Perform Next Step if Tests Passed
-        if: success()  # Asegúrate de que solo se ejecute si el paso anterior fue exitoso
-        run: echo "Tests passed! Proceeding to the next step..."  # Agrega aquí lo que desees ejecutar
-
-      # Este paso de subir logs se ejecutará solo si las pruebas han pasado
       - name: Upload Cypress Logs
-        uses: actions/upload-artifact@v4  # Subir los logs generados como artefactos en GitHub Actions
+        uses: actions/upload-artifact@v4
         with:
           name: cypress-logs
           path: cypress/logs/*.json  # Sube los logs en formato JSON
+
+      # Subir videos grabados por Cypress (siempre se graban, incluso si las pruebas fallan)
+      - name: Upload Cypress Videos
+        uses: actions/upload-artifact@v4
+        with:
+          name: cypress-videos
+          path: cypress/videos/**/*.mp4  # Ruta de los videos grabados
+
+      # Subir capturas de pantalla si hubo fallos en las pruebas
+      - name: Upload Cypress Screenshots
+        uses: actions/upload-artifact@v4
+        with:
+          name: cypress-screenshots
+          path: cypress/screenshots/**/*.png  # Ruta de las capturas de pantalla

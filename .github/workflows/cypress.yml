@@ -32,7 +32,7 @@ jobs:
         run: npx cypress run --reporter mochawesome --reporter-options reportDir=cypress/logs,overwrite=false,html=false,json=true  # Ejecuta Cypress con mochawesome
 
       - name: Upload Cypress Logs
-        uses: actions/upload-artifact@v2  # Subir los logs generados como artefactos en GitHub Actions
+        uses: actions/upload-artifact@v4  # Subir los logs generados como artefactos en GitHub Actions
         with:
           name: cypress-logs
           path: cypress/logs/*.json  # Sube los logs en formato JSON

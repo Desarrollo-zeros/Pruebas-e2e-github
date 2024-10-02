@@ -24,7 +24,12 @@ jobs:
         run: npm install --save-dev mochawesome  # Instala el reporter mochawesome
 
       - name: Run Cypress Tests
+        run: npx cypress run --env allure=true
+
+      - name: Run Cypress & mochawesome Tests
         run: npx cypress run --reporter mochawesome --reporter-options reportDir=cypress/logs,overwrite=false,html=false,json=true  # Ejecuta Cypress con mochawesome
+
+
 
       # Este paso solo se ejecutará si el paso de "Run Cypress Tests" tuvo éxito
       - name: Upload Cypress Logs

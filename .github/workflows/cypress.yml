@@ -29,8 +29,6 @@ jobs:
       - name: Run Cypress & mochawesome Tests
         run: npx cypress run --reporter mochawesome --reporter-options reportDir=cypress/logs,overwrite=false,html=false,json=true  # Ejecuta Cypress con mochawesome
 
-
-
       # Este paso solo se ejecutará si el paso de "Run Cypress Tests" tuvo éxito
       - name: Upload Cypress Logs
         uses: actions/upload-artifact@v4
